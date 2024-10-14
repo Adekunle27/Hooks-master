@@ -16,11 +16,11 @@ A collection of custom React hooks to enhance your development experience. This 
 
 ## Installation
 
-To install the `hook-master` package, run the following command:
+To install the `hooks-master` package, run the following command:
 
 ```bash
 
-npm install hook-master
+npm install hooks-master
 
 ```
 
@@ -28,11 +28,11 @@ npm install hook-master
 
 #### useFetch
 
-The useFetch hook allows you to fetch data from a provided URL. It manages loading state, error handling, and response data.
+The useFetch hooks allows you to fetch data from a provided URL. It manages loading state, error handling, and response data.
 
 ```jsx
 import React from "react";
-import { useFetch } from "hook-master";
+import { useFetch } from "hooks-master";
 
 const DataDisplay = () => {
   const { data, loading, error } = useFetch(
@@ -65,7 +65,7 @@ export default DataDisplay;
 
 #### Return Value
 
-The `useFetch` hook returns an object with the following properties:
+The `useFetch` hooks returns an object with the following properties:
 
 - `data`: The fetched data (or `null` if still loading).
 - `loading`: A boolean indicating if the request is in progress.
@@ -75,7 +75,7 @@ Example with options
 
 ```jsx
 import React from "react";
-import { useFetch } from "hook-master";
+import { useFetch } from "hooks-master";
 
 const PostCreator = () => {
   const options = {
@@ -112,13 +112,13 @@ export default PostCreator;
 
 ### useDebounce
 
-The `useDebounce` hook is used to debounce a value, preventing updates until a specified delay has passed.
+The `useDebounce` hooks is used to debounce a value, preventing updates until a specified delay has passed.
 
 #### Example
 
 ```jsx
 import React, { useState } from 'react';
-import { useDebounce } from 'hook-master';
+import { useDebounce } from 'hooks-master';
 
 const SearchInput = () => {
   const [query, setQuery] = useState('');
@@ -151,13 +151,13 @@ Returns the debounced value.
 
 ### useThrottle
 
-The `useThrottle` hook limits the rate at which a function can fire. This is useful for performance optimization.
+The `useThrottle` hooks limits the rate at which a function can fire. This is useful for performance optimization.
 
 #### Example
 
 ```jsx
 import React, { useState } from 'react';
-import { useThrottle } from 'hook-master';
+import { useThrottle } from 'hooks-master';
 
 const ThrottledButton = () => {
   const [count, setCount] = useState(0);
@@ -189,13 +189,13 @@ Returns the throttled value.
 
 ### useToggle
 
-The `useToggle` hook provides a simple way to toggle a boolean state.
+The `useToggle` hooks provides a simple way to toggle a boolean state.
 
 #### Example
 
 ```jsx
 import React from 'react';
-import { useToggle } from 'hook-master';
+import { useToggle } from 'hooks-master';
 
 const ToggleComponent = () => {
   const [isToggled, toggle] = useToggle();
@@ -256,4 +256,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 - **Installation**: Easily install the package using npm.
 - **Usage**: Clear usage examples for the hooks, both for basic and advanced use cases.
-- **API Reference**: This section describes the function parameters and return values, making it easy for developers to understand how to use the hook.
+- **API Reference**: This section describes the function parameters and return values, making it easy for developers to understand how to use the hooks.
