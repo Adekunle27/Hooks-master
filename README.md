@@ -1,6 +1,6 @@
 # hooks-master
 
-A collection of custom React hooks to enhance your development experience. This package includes `useFetch`, a hook for fetching data from APIs effortlessly.
+A collection of custom React hooks to enhance your development experience. This package includes `useFetch`, `useDebounce`, `useThrottle`, `useToggle` which can be useful in fetching data from APIs effortlessly, to debounce a value preventing updates until a specified delay has passed, limits the rate at which a function can fire and also provides a simple way to toggle a boolean state.
 
 ## Table of Contents
 
@@ -20,7 +20,7 @@ To install the `hook-master` package, run the following command:
 
 ```bash
 
-npm  install  hook-master
+npm install hook-master
 
 ```
 
@@ -30,33 +30,32 @@ npm  install  hook-master
 
 The useFetch hook allows you to fetch data from a provided URL. It manages loading state, error handling, and response data.
 
-```bash
+```jsx
+import React from "react";
+import { useFetch } from "hook-master";
 
-import  React  from  'react';
-import  {  useFetch  }  from  'hook-master';
+const DataDisplay = () => {
+  const { data, loading, error } = useFetch(
+    "https://jsonplaceholder.typicode.com/todos/1"
+  );
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
-const  DataDisplay  = () => {
-const  {  data,  loading,  error  }  =  useFetch('https://jsonplaceholder.typicode.com/todos/1');
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
-if (loading) {
-	return <div>Loading...</div>;
-}
-
-if (error) {
-	return <div>Error:  {error}</div>;
-}
-
-return (
-
-	<div>
-		<h1>{data.title}</h1>
-		<p>Status:  {data.completed  ?  'Completed'  :  'Pending'}</p>
-	</div>
-	);
+  return (
+    <div>
+      <h1>{data.title}</h1>
+      <p>Status: {data.completed ? "Completed" : "Pending"}</p>
+    </div>
+  );
 };
 
-export  default  DataDisplay;
+export default DataDisplay;
 ```
 
 #### Parameters
